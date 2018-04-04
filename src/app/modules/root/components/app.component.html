@@ -1,0 +1,21 @@
+<div class="main-container">
+  <header class="header header-5">
+    <div class="branding">
+      <a routerLink="/" class="nav-link">
+        <span class="title">GitHub Play Ground</span>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a routerLink="/about" routerLinkActive="active" class="nav-link nav-text">About</a>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <div class="content-area">
+        <div class="col-lg-8 offset-lg-2">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>
+</div>

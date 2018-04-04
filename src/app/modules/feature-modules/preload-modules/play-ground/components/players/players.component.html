@@ -1,0 +1,59 @@
+<h1 class="heading">Select Players</h1>
+
+<form [formGroup]="playersForm" (ngSubmit)="handleFormSubmit()">
+  <section class="form-block">
+    <!-- player one -->
+    <div class="form-group row">
+      <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+        <label for="player_one">Player One</label>
+      </div>
+
+      <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+        <label for="player_one"
+               aria-haspopup="true"
+               role="tooltip"
+               class="tooltip tooltip-validation tooltip-md tooltip-top-left d-block"
+               [class.invalid]="isFieldInvalid('playerOne')"
+        >
+          <input class="form-control"
+                 type="text"
+                 id="player_one"
+                 placeholder="Enter first player name"
+                 formControlName="playerOne"
+          >
+          <span class="tooltip-content">Player one is required.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- player two -->
+    <div class="form-group row">
+      <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+        <label for="player_two">Player Two</label>
+      </div>
+      <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+        <label for="player_two"
+               aria-haspopup="true"
+               role="tooltip"
+               class="tooltip tooltip-validation tooltip-md tooltip-top-left d-block"
+               [class.invalid]="isFieldInvalid('playerTwo')"
+        >
+          <input class="form-control"
+                 type="text"
+                 id="player_two"
+                 placeholder="Enter second player name"
+                 formControlName="playerTwo"
+          >
+          <span class="tooltip-content">Player two is required.</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <button class="btn btn-primary" type="submit" [disabled]="playersForm.invalid">Next</button>
+      <button class="btn btn-outline" (click)="handleFormReset($event)">Reset</button>
+    </div>
+  </section>
+</form>
+
+<router-outlet></router-outlet>
