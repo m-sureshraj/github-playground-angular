@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./player-info.component.css']
 })
 export class PlayerInfoComponent {
-  @Input() player: Object;
+  @Input() player: any;
 }

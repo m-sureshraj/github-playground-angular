@@ -5,9 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 // components
-import { IntroComponent } from './components/intro/intro.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LoadingComponent } from './components/loading/loading.component';
+import {
+  IntroComponent,
+  NotFoundComponent,
+  LoadingComponent
+} from './components';
 
 @NgModule({
   imports: [
@@ -15,7 +17,11 @@ import { LoadingComponent } from './components/loading/loading.component';
     CommonModule,
     RouterModule
   ],
-  declarations: [IntroComponent, NotFoundComponent, LoadingComponent],
+  declarations: [
+    IntroComponent,
+    NotFoundComponent,
+    LoadingComponent
+  ],
   exports: [
     IntroComponent,
     NotFoundComponent,

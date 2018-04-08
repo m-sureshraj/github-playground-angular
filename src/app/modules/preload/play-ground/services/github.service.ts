@@ -17,8 +17,6 @@ export class GitHubService {
     }
 
     public getPlayersInfo(players: [string]): Promise<Object[]> {
-        if (!players) return Promise.reject({ status: 'Invalid players' });
-
         return Promise.all(players.map(userName => this.getUserInfo(userName)))
             .then(playersInfo => playersInfo)
             .catch((err: any) => {

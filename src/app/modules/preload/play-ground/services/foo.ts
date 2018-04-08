@@ -16,10 +16,15 @@ export class GitHubUsersInfoResolver implements Resolve<any> {
     resolve(activeRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Object> {
         const players = this.DataSharing.getPlayersName();
 
+        if (!players) {
+            // todo: show invalid users msg to the user
+            this.router.navigate(['/players']);
+            return Promise.resolve(null);
+        }
+
         return this.GH.getPlayersInfo(players)
             .then((playersInfo => playersInfo))
             .catch(() => {
-                // todo: show invalid users msg to the user
                 this.router.navigate(['/players']);
                 return null;
             });

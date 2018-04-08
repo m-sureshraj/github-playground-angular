@@ -1,5 +1,19 @@
 <h1 class="heading">Select Players</h1>
 
+<div class="alert alert-warning">
+  <div class="alert-items">
+    <div class="alert-item static">
+      <div class="alert-icon-wrapper">
+        <!--<clr-icon class="alert-icon" shape="exclamation-triangle"></clr-icon>-->
+      </div>
+      <span class="alert-text">Select players first before starting the battle.</span>
+    </div>
+  </div>
+  <button type="button" class="close" aria-label="Close">
+    <!--<clr-icon aria-hidden="true" shape="close"></clr-icon>-->
+  </button>
+</div>
+
 <form [formGroup]="playersForm" (ngSubmit)="handleFormSubmit()">
   <section class="form-block">
     <!-- player one -->
