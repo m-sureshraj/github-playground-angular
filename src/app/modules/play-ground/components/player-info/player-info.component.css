@@ -1,0 +1,16 @@
+app-avatar {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eee;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.card-title {
+    text-align: center;
+}
+.card {
+    box-shadow: none;
+}

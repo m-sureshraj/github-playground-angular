@@ -1,0 +1,13 @@
+img {
+    opacity: 0;
+    visibility: hidden;
+    width: inherit;
+}
+
+.show-image {
+    opacity: 1;
+    transition: opacity 0.1s linear;
+    visibility: visible;
+}
+
+

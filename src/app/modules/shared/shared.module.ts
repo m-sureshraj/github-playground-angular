@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,8 +8,15 @@ import { RouterModule } from '@angular/router';
 import {
   IntroComponent,
   NotFoundComponent,
-  LoadingComponent
+  LoadingComponent,
+  HomeComponent,
+  AvatarComponent
 } from './components';
+
+// services
+import {
+  LastRouteDetailsService
+} from './services/last-route-details.services';
 
 @NgModule({
   imports: [
@@ -20,7 +27,9 @@ import {
   declarations: [
     IntroComponent,
     NotFoundComponent,
-    LoadingComponent
+    LoadingComponent,
+    HomeComponent,
+    AvatarComponent
   ],
   exports: [
     IntroComponent,
@@ -28,7 +37,15 @@ import {
     LoadingComponent,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AvatarComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [LastRouteDetailsService]
+    };
+  }
+}

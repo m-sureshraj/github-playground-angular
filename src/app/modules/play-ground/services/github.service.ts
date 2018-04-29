@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Observable } from "rxjs/Rx";
-// import { forkJoin } from "rxjs/observable/forkJoin";
-// import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class GitHubService {
@@ -22,15 +19,5 @@ export class GitHubService {
             .catch((err: any) => {
                 return Promise.reject(err);
             });
-
-        // todo: convert promise way to Observable
-        // if (!players) return Observable.throw('Invalid players');
-
-        // forkJoin is equal to Promise.all
-        // return forkJoin(players.map(userName => this.getUserInfo(userName)))
-        //     .catch(err => {
-        //         console.error(err);
-        //         return Observable.throw(err);
-        //     });
     }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 // custom modules
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { PlayGroundRoutingModule } from './play-ground-routing.module';
 
 // services
@@ -11,12 +11,11 @@ import {
   GitHubUsersInfoResolver
 } from './services';
 
+// containers
+import { PlayersComponent, BattleComponent } from './containers';
+
 // components
-import {
-  PlayersComponent,
-  BattleComponent,
-  PlayerInfoComponent
-} from './components';
+import { PlayerInfoComponent } from './components';
 
 @NgModule({
   imports: [
@@ -34,7 +33,7 @@ import {
     PlayerInfoComponent
   ]
 })
-export class PlayGroundModule {
+export default class PlayGroundModule {
   constructor() {
     console.log('play ground module loaded..');
   }

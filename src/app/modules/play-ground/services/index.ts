@@ -1,3 +1,3 @@
 export * from './github.service';
 export * from './play-ground-data-sharing.service';
-export * from './foo';
+export * from './github-user-data-resolver.service';

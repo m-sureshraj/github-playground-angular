@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// components
-import { NotFoundComponent } from './modules/shared/components/not-found/not-found.component';
-import { IntroComponent } from './modules/shared/components/intro/intro.component';
+import {
+  HomeComponent,
+  NotFoundComponent,
+  IntroComponent
+} from '@shared/components';
 
 // services
 import { AppPreloadStrategy } from './services/app-route-preloading-strategy.service';
@@ -11,30 +13,28 @@ import { AppPreloadStrategy } from './services/app-route-preloading-strategy.ser
 const modulePath = 'app/modules';
 const routes: Routes = [
   {
-    path: 'about',
-    loadChildren: `${modulePath}/lazy/about/about.module#AboutModule`
-  },
-  // default path
-  {
     path: '',
+    component: HomeComponent,
     children: [
       { path: '', component: IntroComponent },
       {
         path: 'players',
-        loadChildren: `${modulePath}/preload/play-ground/play-ground.module#PlayGroundModule`,
+        loadChildren: `${modulePath}/play-ground/play-ground.module`,
         data: { preload: true }
+      },
+      {
+        path: 'about',
+        loadChildren: `${modulePath}/about/about.module`
       }
     ]
   },
-  // wildcard. The router will select this route if the requested URL doesn't match any paths
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: AppPreloadStrategy,
-    // enableTracing: true
+    preloadingStrategy: AppPreloadStrategy
   })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

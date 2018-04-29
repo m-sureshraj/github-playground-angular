@@ -1,12 +1,11 @@
 <div class="card">
-  <div class="card-img">
-    <img [src]="player.avatar_url" alt="user avatar">
-  </div>
+  <app-avatar [path]="player.avatar_url" [alt]="player.name"></app-avatar>
+
   <div class="card-block">
     <h4 class="card-title">{{ player.name }}</h4>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ player.bio }}</li>
+    <li class="list-group-item" [hidden]="!player.bio">{{ player.bio }}</li>
     <li class="list-group-item">Location: {{ player.location }}</li>
     <li class="list-group-item" [hidden]="!player.company">Company: {{ player.company }}</li>
     <li class="list-group-item">Followers: {{ player.followers }}</li>

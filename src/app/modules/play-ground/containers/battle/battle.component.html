@@ -1,6 +1,4 @@
-<app-loading [text]="'Waiting...'" *ngIf="loading"></app-loading>
-
-<section *ngIf="playersInfo && !loading" class="row">
+<section *ngIf="playersInfo" class="row">
     <div class="col-lg-5">
         <app-player-info [player]="playersInfo[0]"></app-player-info>
     </div>
@@ -11,7 +9,7 @@
 
     <section class="col-lg-4 offset-lg-4 action-btn">
         <button class="btn btn-primary btn-block">Start Battle</button>
-        <button class="btn btn-outline btn-block">Reselect Players</button>
+        <button class="btn btn-outline btn-block" routerLink="../">Reselect Players</button>
     </section>
 </section>
 

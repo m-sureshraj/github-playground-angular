@@ -2,33 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // components
-import { AppComponent } from './components/app/app.component';
+import { AppComponent } from './app.component';
 
 // custom modules
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './modules/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 // custom services
 import { AppPreloadStrategy } from './services/app-route-preloading-strategy.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    SharedModule,
+    SharedModule.forRoot(),
     AppRoutingModule
   ],
   providers: [AppPreloadStrategy],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// declarations (where we register components)
-// * There can be only one owner for a declared component, the module which is belongs
-//   to. If that module exports it's components to outside world, then importing that
-//   module we get access to is exported components.
-
-// providers (where we register services)
-// * if a module register a service then it will automatically available to the other modules.
