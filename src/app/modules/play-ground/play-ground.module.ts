@@ -12,7 +12,7 @@ import {
 } from './services';
 
 // containers
-import { PlayersComponent, BattleComponent } from './containers';
+import { PlayersComponent, BattleComponent, BattleResultComponent } from './containers';
 
 // components
 import { PlayerInfoComponent } from './components';
@@ -30,11 +30,10 @@ import { PlayerInfoComponent } from './components';
   declarations: [
     PlayersComponent,
     BattleComponent,
-    PlayerInfoComponent
+    PlayerInfoComponent,
+    BattleResultComponent
   ]
 })
 export default class PlayGroundModule {
-  constructor() {
-    console.log('play ground module loaded..');
-  }
+  constructor() {}
 }

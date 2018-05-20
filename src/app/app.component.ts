@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { LastRouteDetailsService } from '@shared/services';
 import { ISubscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/pairwise';
+import { filter, pairwise } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +18,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.router.events
-      .filter(e => e instanceof RoutesRecognized)
-      .pairwise()
+      .pipe(
+        filter(e => e instanceof RoutesRecognized),
+        pairwise()
+      )
       .subscribe((e: any) => {
         this.lastRoute.setReferrer(e[0].urlAfterRedirects);
       });

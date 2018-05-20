@@ -1,18 +1,24 @@
-<div class="card">
+<div class="card" [ngClass]="{'winner': isWinner === true, 'looser': isWinner === false}">
+  <div *ngIf="player.__points__" class="points">
+    <h3>{{ player.__points__.toLocaleString() }}</h3>
+    <label>Points</label>
+  </div>
+
   <app-avatar [path]="player.avatar_url" [alt]="player.name"></app-avatar>
 
   <div class="card-block">
     <h4 class="card-title">{{ player.name }}</h4>
   </div>
-  <ul class="list-group list-group-flush">
+
+  <ul class="list-group list-group-flush" *ngIf="!player.__points__">
     <li class="list-group-item" [hidden]="!player.bio">{{ player.bio }}</li>
     <li class="list-group-item">Location: {{ player.location }}</li>
     <li class="list-group-item" [hidden]="!player.company">Company: {{ player.company }}</li>
     <li class="list-group-item">Followers: {{ player.followers }}</li>
     <li class="list-group-item">Following: {{ player.following }}</li>
     <li class="list-group-item">Repos: {{ player.public_repos }}</li>
-
   </ul>
+
   <div class="card-footer">
     <a href="{{ player.html_url }}" target="_blank" class="btn btn-sm btn-link">View profile on github</a>
   </div>

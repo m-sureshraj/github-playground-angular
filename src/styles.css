@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
 .main-container {
     background: #fff;
+}
+
+.card.looser a,
+.card.looser .card-title,
+.card.looser .points h3,
+.card.looser .points label {
+    color: #d4d4d4 !important;
+}
+
+.card.looser app-avatar img {
+    filter: grayscale(100%) !important;
+    opacity: 0.3 !important;
 }

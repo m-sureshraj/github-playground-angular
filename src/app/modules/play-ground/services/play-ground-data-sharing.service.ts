@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class PlayGroundDataSharingService {
     private playersName: [string];
     private invalidAccessToBattle: boolean = null;
+    private playersInfo: [any];
 
     public getPlayersName(): [string] {
         return this.playersName;
@@ -19,5 +20,13 @@ export class PlayGroundDataSharingService {
 
     public getInvalidAccessToBattleStatus(): boolean {
         return this.invalidAccessToBattle;
+    }
+
+    public getPlayersInfo(): [any] {
+        return this.playersInfo;
+    }
+
+    public setPlayersInfo(playersInfo): void {
+        this.playersInfo = playersInfo;
     }
 }

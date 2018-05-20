@@ -1,0 +1,20 @@
+<section *ngIf="playersInfo" class="row">
+  <div class="col-lg-12 text-center">
+    <h1 *ngIf="winner;else tie">🎉 The winner is {{ winner.name }}</h1>
+  </div>
+
+  <div class="col-lg-5">
+    <app-player-info [player]="playersInfo[0]" [winner]="winner"></app-player-info>
+  </div>
+
+  <div class="col-lg-5 offset-lg-2">
+    <app-player-info [player]="playersInfo[1]" [winner]="winner"></app-player-info>
+  </div>
+
+  <section class="col-lg-4 offset-lg-4">
+    <button class="btn btn-outline btn-block" routerLink="/players">Play Again</button>
+  </section>
+</section>
+
+<!-- game is tie -->
+<ng-template #tie>Congratulation to both</ng-template>

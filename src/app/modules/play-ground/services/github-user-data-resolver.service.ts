@@ -22,7 +22,7 @@ export class GitHubUsersInfoResolver implements Resolve<any> {
 
         return this.GH.getPlayersInfo(players)
             .then((playersInfo => playersInfo))
-            .catch((e) => {
+            .catch(e => {
                 console.error(e);
                 this.router.navigate(['/players']);
                 return null;

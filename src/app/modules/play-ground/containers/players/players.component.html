@@ -70,7 +70,7 @@
       >
         {{ formSubmitProgress ? 'Fetching...' : 'Next' }}
       </button>
-      <button class="btn btn-outline" (click)="handleFormReset($event)">Reset</button>
+      <button class="btn btn-outline" (click)="handleFormReset($event)" [disabled]="formSubmitProgress">Reset</button>
     </div>
   </section>
 </form>

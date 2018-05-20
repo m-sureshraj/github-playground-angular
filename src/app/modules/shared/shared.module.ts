@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { IconsModule } from '../icons/icons.module';
 
 // components
 import {
@@ -22,7 +23,8 @@ import {
   imports: [
     HttpClientModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    IconsModule
   ],
   declarations: [
     IntroComponent,
@@ -38,7 +40,8 @@ import {
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AvatarComponent
+    AvatarComponent,
+    IconsModule
   ]
 })
 export class SharedModule {
